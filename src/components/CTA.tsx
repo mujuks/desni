@@ -24,7 +24,7 @@ const CTA = () => {
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-            className="absolute left-1/2 top-1/2 hidden h-[450px] w-[450px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#E63946]/8 sm:block"
+            className="absolute left-1/2 top-1/2 hidden h-[350px] w-[350px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#E63946]/8 sm:block sm:h-[450px] sm:w-[450px]"
           />
 
           <div className="relative z-10">

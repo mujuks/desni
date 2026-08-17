@@ -113,7 +113,7 @@ const Home = () => {
                 and light meals in a comfortable, modern setting with free WiFi.
               </p>
 
-              <div className="mt-6 grid grid-cols-3 gap-3 sm:mt-8 sm:gap-6">
+              <div className="mt-5 grid grid-cols-3 gap-2 sm:mt-8 sm:gap-4 md:gap-6">
                 <div className="rounded-xl border border-[#2A9D8F]/20 bg-[#2A9D8F]/5 p-3 text-center sm:rounded-2xl sm:p-4">
                   <Coffee className="mx-auto mb-1.5 text-[#2A9D8F] sm:hidden" size={22} />
                   <Coffee className="mx-auto mb-2 hidden text-[#2A9D8F] sm:block" size={28} />

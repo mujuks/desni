@@ -25,6 +25,15 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [isOpen]);
+
   return (
     <header
       className={`fixed top-0 left-0 z-50 w-full transition-all duration-700 ${
@@ -33,18 +42,19 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <Link to="/" className="group flex items-center gap-2.5">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#E63946] transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(230,57,70,0.4)]">
-            <Gamepad2 size={18} className="text-white" />
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
+        <Link to="/" className="group flex items-center gap-2 sm:gap-2.5">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#E63946] transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(230,57,70,0.4)] sm:h-9 sm:w-9">
+            <Gamepad2 size={16} className="text-white sm:hidden" />
+            <Gamepad2 size={18} className="hidden text-white sm:block" />
           </div>
-          <span className="text-xl font-black tracking-tight">
+          <span className="text-lg font-black tracking-tight sm:text-xl">
             <span className="text-white">DESNI</span>
             <span className="text-[#E63946]">VR</span>
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="hidden items-center gap-0.5 md:flex lg:gap-1">
           {navLinks.map((link) => (
             <NavLink
               key={link.name}
@@ -97,7 +107,7 @@ const Navbar = () => {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden border-t border-white/5 bg-[#0A0A0F]/95 backdrop-blur-2xl md:hidden"
           >
-            <div className="flex flex-col gap-1 px-6 py-6">
+            <div className="flex flex-col gap-1 px-4 py-6 sm:px-6">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.name}

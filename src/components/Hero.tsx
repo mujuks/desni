@@ -57,7 +57,7 @@ const Hero = () => {
         className="absolute left-0 top-1/2 hidden h-px w-full origin-left bg-linear-to-r from-transparent via-[#E63946]/15 to-transparent lg:block"
       />
 
-      <div className="relative mx-auto flex min-h-[100dvh] max-w-7xl flex-col items-center gap-6 px-4 pt-28 pb-12 sm:px-6 sm:pt-32 sm:pb-16 lg:flex-row lg:items-center lg:gap-10 lg:pt-32 lg:pb-20">
+      <div className="relative mx-auto flex min-h-[100dvh] max-w-7xl flex-col items-center gap-6 overflow-hidden px-4 pt-24 pb-12 sm:px-6 sm:pt-28 sm:pb-16 lg:flex-row lg:items-center lg:gap-10 lg:overflow-visible lg:pt-32 lg:pb-20">
         {/* Left Content */}
         <div className="max-w-2xl lg:w-1/2">
           {/* Badge */}
@@ -65,20 +65,20 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-            className="mb-6 sm:mb-8"
+            className="mb-5 sm:mb-8"
           >
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#E63946]/20 bg-[#E63946]/5 px-1 py-1 pr-4 backdrop-blur-sm sm:gap-2 sm:pr-5">
-              <span className="rounded-full bg-[#E63946] px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white sm:px-4 sm:py-1.5 sm:text-xs">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#E63946]/20 bg-[#E63946]/5 px-1 py-1 pr-3 backdrop-blur-sm sm:gap-2 sm:pr-5">
+              <span className="rounded-full bg-[#E63946] px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-white sm:px-4 sm:py-1.5 sm:text-xs">
                 Now Open
               </span>
               <MapPin size={12} className="text-[#E63946] sm:hidden" />
               <MapPin size={14} className="hidden text-[#E63946] sm:block" />
-              <span className="text-xs font-medium text-gray-300 sm:text-sm">Runda Mall, Nairobi</span>
+              <span className="text-[11px] font-medium text-gray-300 sm:text-sm">Runda Mall, Nairobi</span>
             </span>
           </motion.div>
 
           {/* Headline */}
-          <h1 className="text-4xl font-black leading-[1.05] tracking-tight sm:text-[3.2rem] md:text-5xl lg:text-[5rem] xl:text-[5.5rem]">
+          <h1 className="text-[2.25rem] font-black leading-[1.05] tracking-tight sm:text-[3.2rem] md:text-5xl lg:text-[5rem] xl:text-[5.5rem]">
             <motion.span custom={0} variants={wordVariants} initial="hidden" animate="visible" className="block">
               STEP INTO
             </motion.span>
@@ -97,7 +97,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.9 }}
-            className="mt-5 max-w-lg text-base leading-relaxed text-gray-400 sm:mt-7 sm:text-lg"
+            className="mt-4 max-w-lg text-sm leading-relaxed text-gray-400 sm:mt-7 sm:text-lg"
           >
             Explore incredible virtual worlds, challenge your friends,
             and experience immersive VR adventures at Nairobi's premier
@@ -109,7 +109,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 1.05 }}
-            className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4"
+            className="mt-6 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4"
           >
             <Link
               to="/contact"
@@ -146,25 +146,25 @@ const Hero = () => {
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-            className="absolute hidden h-[300px] w-[300px] rounded-full border border-dashed border-[#E63946]/10 sm:block sm:h-[400px] sm:w-[400px] lg:h-[500px] lg:w-[500px]"
+            className="absolute hidden h-[300px] w-[300px] rounded-full border border-dashed border-[#E63946]/10 sm:block sm:h-[350px] sm:w-[350px] lg:h-[500px] lg:w-[500px]"
           />
 
           {/* Pulsing Ring */}
           <motion.div
             animate={{ scale: [1, 1.05, 1], opacity: [0.15, 0.25, 0.15] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute h-[260px] w-[260px] rounded-full border-2 border-[#E63946]/15 sm:h-[350px] sm:w-[350px] lg:h-[420px] lg:w-[420px]"
+            className="absolute h-[200px] w-[200px] rounded-full border-2 border-[#E63946]/15 sm:h-[300px] sm:w-[300px] lg:h-[420px] lg:w-[420px]"
           />
 
           {/* Inner Ring */}
           <motion.div
             animate={{ rotate: -360 }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="absolute hidden h-[220px] w-[220px] rounded-full border border-[#A8DADC]/8 sm:block sm:h-[280px] sm:w-[280px] lg:h-[340px] lg:w-[340px]"
+            className="absolute hidden h-[160px] w-[160px] rounded-full border border-[#A8DADC]/8 sm:block sm:h-[250px] sm:w-[250px] lg:h-[340px] lg:w-[340px]"
           />
 
           {/* Central Glow */}
-          <div className="absolute h-[180px] w-[180px] rounded-full bg-[#E63946]/10 blur-[60px] sm:h-[250px] sm:w-[250px] sm:blur-[80px] lg:h-[280px] lg:w-[280px]" />
+          <div className="absolute h-[140px] w-[140px] rounded-full bg-[#E63946]/10 blur-[50px] sm:h-[220px] sm:w-[220px] sm:blur-[70px] lg:h-[280px] lg:w-[280px] lg:blur-[80px]" />
 
           {/* Hero Image */}
           <motion.img
@@ -172,7 +172,7 @@ const Hero = () => {
             alt="VR Player at DESNI VR - Runda Mall Nairobi"
             animate={{ y: [0, -12, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            className="relative z-10 w-full max-w-[280px] drop-shadow-[0_0_50px_rgba(230,57,70,0.15)] sm:max-w-sm md:max-w-md lg:max-w-md"
+            className="relative z-10 w-full max-w-[220px] drop-shadow-[0_0_40px_rgba(230,57,70,0.15)] sm:max-w-sm md:max-w-md lg:max-w-md"
           />
         </motion.div>
       </div>

@@ -64,12 +64,12 @@ const Gallery = () => {
         </motion.div>
 
         {/* Filter Buttons */}
-        <div className="mb-8 flex flex-wrap justify-center gap-2 sm:mb-12 sm:gap-3">
+        <div className="mb-8 flex justify-center gap-2 overflow-x-auto pb-2 sm:mb-12 sm:flex-wrap sm:pb-0 sm:gap-3">
           {filters.map((filter) => (
             <button
               key={filter}
               onClick={() => setActiveFilter(filter)}
-              className={`rounded-full px-3 py-1.5 text-xs font-medium transition-all duration-300 sm:px-5 sm:py-2 sm:text-sm ${
+              className={`whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-medium transition-all duration-300 sm:px-5 sm:py-2 sm:text-sm ${
                 activeFilter === filter
                   ? "bg-[#E63946] text-white"
                   : "border border-white/10 bg-white/5 text-gray-400 hover:border-[#E63946]/40 hover:text-white"

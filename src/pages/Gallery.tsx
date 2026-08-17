@@ -61,12 +61,12 @@ const Gallery = () => {
       {/* Gallery */}
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20">
         {/* Filters */}
-        <div className="mb-8 flex flex-wrap justify-center gap-2 sm:mb-12 sm:gap-3">
+        <div className="mb-8 flex justify-center gap-2 overflow-x-auto pb-2 sm:mb-12 sm:flex-wrap sm:pb-0 sm:gap-3">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`rounded-full px-3 py-1.5 text-xs font-medium transition-all duration-300 sm:px-6 sm:py-2 sm:text-sm ${
+              className={`whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-medium transition-all duration-300 sm:px-6 sm:py-2 sm:text-sm ${
                 activeCategory === category
                   ? "bg-[#E63946] text-white"
                   : "border border-white/10 bg-white/5 text-gray-400 hover:border-[#E63946]/40 hover:text-white"
@@ -94,7 +94,7 @@ const Gallery = () => {
                   src={item.image}
                   alt={item.title}
                   onClick={() => setSelectedImage(item.image)}
-                  className="h-56 w-full cursor-pointer object-cover transition duration-500 group-hover:scale-110 sm:h-[350px]"
+                  className="h-48 w-full cursor-pointer object-cover transition duration-500 group-hover:scale-110 sm:h-[300px] lg:h-[350px]"
                 />
 
                 <div className="absolute inset-0 bg-linear-to-t from-[#0A0A0F] via-transparent opacity-0 transition group-hover:opacity-100" />

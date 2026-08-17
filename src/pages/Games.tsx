@@ -64,7 +64,7 @@ const Games = () => {
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 sm:pb-24">
         {/* Search */}
         <div className="mb-6 flex flex-col gap-4 sm:mb-10 sm:flex-row sm:items-center sm:justify-between sm:gap-5">
-          <div className="flex w-full items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-4 py-2.5 sm:w-auto sm:gap-3 sm:px-5 sm:py-3">
+          <div className="flex w-full items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-4 py-2.5 sm:w-auto sm:max-w-xs sm:gap-3 sm:px-5 sm:py-3">
             <Search size={18} className="text-[#E63946] sm:hidden" />
             <Search size={20} className="hidden text-[#E63946] sm:block" />
             <input
@@ -78,7 +78,7 @@ const Games = () => {
         </div>
 
         {/* Categories */}
-        <div className="mb-8 flex flex-wrap justify-center gap-2 sm:mb-12 sm:gap-3">
+        <div className="mb-8 flex justify-center gap-2 overflow-x-auto pb-2 sm:flex-wrap sm:pb-0 sm:gap-3">
           {categories.map((category) => (
             <button
               key={category}
