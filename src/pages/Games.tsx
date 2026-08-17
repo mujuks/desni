@@ -34,25 +34,26 @@ const Games = () => {
       <Navbar />
 
       {/* Hero Header */}
-      <section className="relative flex min-h-[60vh] items-center justify-center overflow-hidden">
+      <section className="relative flex min-h-[50vh] items-center justify-center overflow-hidden sm:min-h-[60vh]">
         <div className="absolute inset-0 bg-linear-to-b from-[#E63946]/15 to-transparent" />
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative z-10 px-6 text-center"
+          className="relative z-10 px-4 text-center sm:px-6"
         >
-          <Gamepad2 size={60} className="mx-auto mb-6 text-[#E63946]" />
+          <Gamepad2 size={40} className="mx-auto mb-4 text-[#E63946] sm:mb-6 sm:hidden" />
+          <Gamepad2 size={60} className="mx-auto mb-6 hidden text-[#E63946] sm:block" />
 
-          <h1 className="text-5xl font-black md:text-7xl">
+          <h1 className="text-4xl font-black sm:text-5xl md:text-7xl">
             Explore Our
             <span className="block bg-linear-to-r from-[#E63946] to-[#A8DADC] bg-clip-text text-transparent">
               VR Games
             </span>
           </h1>
 
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-400">
+          <p className="mx-auto mt-4 max-w-2xl text-base text-gray-400 sm:mt-6 sm:text-lg">
             Choose from exciting adventures, competitive battles and immersive
             experiences designed for every gamer.
           </p>
@@ -60,28 +61,29 @@ const Games = () => {
       </section>
 
       {/* Games Section */}
-      <section className="mx-auto max-w-7xl px-6 pb-24">
+      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 sm:pb-24">
         {/* Search */}
-        <div className="mb-10 flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
-          <div className="flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-3">
-            <Search className="text-[#E63946]" />
+        <div className="mb-6 flex flex-col gap-4 sm:mb-10 sm:flex-row sm:items-center sm:justify-between sm:gap-5">
+          <div className="flex w-full items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-4 py-2.5 sm:w-auto sm:gap-3 sm:px-5 sm:py-3">
+            <Search size={18} className="text-[#E63946] sm:hidden" />
+            <Search size={20} className="hidden text-[#E63946] sm:block" />
             <input
               type="text"
               placeholder="Search games..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="bg-transparent text-white outline-none placeholder:text-gray-500"
+              className="w-full bg-transparent text-sm text-white outline-none placeholder:text-gray-500"
             />
           </div>
         </div>
 
         {/* Categories */}
-        <div className="mb-12 flex flex-wrap justify-center gap-3">
+        <div className="mb-8 flex flex-wrap justify-center gap-2 sm:mb-12 sm:gap-3">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${
+              className={`rounded-full px-3 py-1.5 text-xs font-medium transition-all duration-300 sm:px-5 sm:py-2 sm:text-sm ${
                 selectedCategory === category
                   ? "bg-[#E63946] text-white"
                   : "border border-white/10 bg-white/5 text-gray-400 hover:border-[#E63946]/40 hover:text-white"
@@ -93,7 +95,7 @@ const Games = () => {
         </div>
 
         {/* Games Grid */}
-        <motion.div layout className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <motion.div layout className="grid gap-5 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
           {filteredGames.map((game) => (
             <GameCard key={game.title} {...game} />
           ))}

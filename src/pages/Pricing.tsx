@@ -47,23 +47,23 @@ const Pricing = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative flex min-h-[60vh] items-center justify-center overflow-hidden">
+      <section className="relative flex min-h-[50vh] items-center justify-center overflow-hidden sm:min-h-[60vh]">
         <div className="absolute inset-0 bg-linear-to-b from-[#E63946]/15 to-transparent" />
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative z-10 px-6 text-center"
+          className="relative z-10 px-4 text-center sm:px-6"
         >
-          <h1 className="text-5xl font-black md:text-7xl">
+          <h1 className="text-4xl font-black sm:text-5xl md:text-7xl">
             Simple Pricing,
             <span className="block bg-linear-to-r from-[#E63946] to-[#A8DADC] bg-clip-text text-transparent">
               Unlimited Fun
             </span>
           </h1>
 
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-400">
+          <p className="mx-auto mt-4 max-w-2xl text-base text-gray-400 sm:mt-6 sm:text-lg">
             Choose a package that fits your adventure. Whether you're gaming solo,
             with friends, or planning an event.
           </p>
@@ -71,8 +71,8 @@ const Pricing = () => {
       </section>
 
       {/* Pricing Cards */}
-      <section className="mx-auto max-w-7xl px-6 py-20">
-        <div className="grid gap-8 lg:grid-cols-3">
+      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20">
+        <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.title}
@@ -80,35 +80,35 @@ const Pricing = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.15 }}
-              className={`rounded-3xl border p-8 backdrop-blur-xl ${
+              className={`rounded-2xl border p-6 backdrop-blur-xl sm:rounded-3xl sm:p-8 ${
                 plan.popular
                   ? "border-[#E63946]/50 bg-[#E63946]/10 shadow-[0_0_50px_rgba(230,57,70,0.2)]"
                   : "border-white/5 bg-white/[0.03]"
               }`}
             >
               {plan.popular && (
-                <span className="rounded-full bg-[#E63946] px-4 py-1 text-sm font-bold text-white">
+                <span className="rounded-full bg-[#E63946] px-3 py-0.5 text-xs font-bold text-white sm:px-4 sm:py-1 sm:text-sm">
                   Most Popular
                 </span>
               )}
 
-              <h2 className="mt-5 text-3xl font-bold">{plan.title}</h2>
-              <h3 className="mt-6 text-5xl font-black text-[#E63946]">{plan.price}</h3>
-              <p className="mt-2 text-gray-400">{plan.time}</p>
-              <p className="mt-5 text-gray-300">{plan.description}</p>
+              <h2 className="mt-4 text-xl font-bold sm:mt-5 sm:text-3xl">{plan.title}</h2>
+              <h3 className="mt-4 text-4xl font-black text-[#E63946] sm:mt-6 sm:text-5xl">{plan.price}</h3>
+              <p className="mt-1.5 text-sm text-gray-400 sm:mt-2">{plan.time}</p>
+              <p className="mt-3 text-sm text-gray-300 sm:mt-5">{plan.description}</p>
 
-              <div className="my-8 h-px bg-white/10" />
+              <div className="my-6 h-px bg-white/10 sm:my-8" />
 
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {plan.features.map((feature) => (
-                  <div key={feature} className="flex gap-3">
-                    <Check className="text-[#E63946]" size={20} />
-                    <span className="text-gray-300">{feature}</span>
+                  <div key={feature} className="flex gap-2 sm:gap-3">
+                    <Check className="mt-0.5 text-[#E63946]" size={16} />
+                    <span className="text-sm text-gray-300">{feature}</span>
                   </div>
                 ))}
               </div>
 
-              <button className="mt-10 w-full rounded-full bg-[#E63946] py-4 font-bold text-white transition-all duration-300 hover:bg-[#c62d39]">
+              <button className="mt-8 w-full rounded-full bg-[#E63946] py-3 font-bold text-white transition-all duration-300 hover:bg-[#c62d39] sm:mt-10 sm:py-4">
                 Book Now
               </button>
             </motion.div>
@@ -117,16 +117,17 @@ const Pricing = () => {
       </section>
 
       {/* Extra Packages */}
-      <section className="bg-[#0F1923] py-20">
-        <div className="mx-auto max-w-7xl px-6">
-          <h2 className="mb-12 text-center text-4xl font-black">Special Packages</h2>
+      <section className="bg-[#0F1923] py-14 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <h2 className="mb-8 text-center text-3xl font-black sm:mb-12 sm:text-4xl">Special Packages</h2>
 
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-5 sm:gap-8 md:grid-cols-3">
             {extraPackages.map((item) => (
-              <div key={item.title} className="rounded-3xl border border-white/5 bg-white/[0.03] p-8">
-                <item.icon size={40} className="text-[#E63946]" />
-                <h3 className="mt-5 text-2xl font-bold">{item.title}</h3>
-                <p className="mt-3 text-gray-400">{item.description}</p>
+              <div key={item.title} className="rounded-2xl border border-white/5 bg-white/[0.03] p-5 sm:rounded-3xl sm:p-8">
+                <item.icon size={32} className="text-[#E63946] sm:hidden" />
+                <item.icon size={40} className="hidden text-[#E63946] sm:block" />
+                <h3 className="mt-4 text-xl font-bold sm:mt-5 sm:text-2xl">{item.title}</h3>
+                <p className="mt-2 text-sm text-gray-400 sm:mt-3">{item.description}</p>
               </div>
             ))}
           </div>
@@ -134,17 +135,17 @@ const Pricing = () => {
       </section>
 
       {/* FAQ */}
-      <section className="mx-auto max-w-5xl px-6 py-20">
-        <h2 className="mb-12 text-center text-4xl font-black">Frequently Asked Questions</h2>
+      <section className="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-20">
+        <h2 className="mb-8 text-center text-3xl font-black sm:mb-12 sm:text-4xl">Frequently Asked Questions</h2>
 
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
           {faqs.map((faq) => (
-            <div key={faq.question} className="rounded-2xl border border-white/5 bg-white/[0.03] p-6">
-              <div className="flex gap-3">
-                <HelpCircle className="text-[#E63946]" />
-                <h3 className="text-lg font-bold">{faq.question}</h3>
+            <div key={faq.question} className="rounded-xl border border-white/5 bg-white/[0.03] p-4 sm:rounded-2xl sm:p-6">
+              <div className="flex gap-2 sm:gap-3">
+                <HelpCircle className="mt-0.5 text-[#E63946]" size={18} />
+                <h3 className="text-sm font-bold sm:text-lg">{faq.question}</h3>
               </div>
-              <p className="mt-3 text-gray-400">{faq.answer}</p>
+              <p className="mt-2 ml-7 text-xs text-gray-400 sm:ml-8 sm:mt-3 sm:text-sm">{faq.answer}</p>
             </div>
           ))}
         </div>
