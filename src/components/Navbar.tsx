@@ -27,27 +27,33 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 z-50 w-full transition-all duration-500 ${
+      className={`fixed top-0 left-0 z-50 w-full transition-all duration-700 ${
         scrolled
-          ? "bg-[#0A0A0F]/95 backdrop-blur-xl shadow-[0_4px_30px_rgba(230,57,70,0.1)] border-b border-[#E63946]/10"
+          ? "border-b border-white/5 bg-[#0A0A0F]/80 shadow-[0_1px_40px_rgba(0,0,0,0.5)] backdrop-blur-2xl"
           : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <Link to="/" className="flex items-center gap-2 text-2xl font-extrabold tracking-wide">
-          <Gamepad2 size={28} className="text-[#E63946]" />
-          <span className="text-[#E63946]">DESNI</span>
-          <span className="text-[#A8DADC]">VR</span>
+        <Link to="/" className="group flex items-center gap-2.5">
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#E63946] transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(230,57,70,0.4)]">
+            <Gamepad2 size={18} className="text-white" />
+          </div>
+          <span className="text-xl font-black tracking-tight">
+            <span className="text-white">DESNI</span>
+            <span className="text-[#E63946]">VR</span>
+          </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-1 md:flex">
           {navLinks.map((link) => (
             <NavLink
               key={link.name}
               to={link.path}
               className={({ isActive }) =>
-                `relative font-medium transition-colors duration-300 ${
-                  isActive ? "text-[#E63946]" : "text-gray-300 hover:text-[#A8DADC]"
+                `relative rounded-full px-4 py-2 text-sm font-medium transition-all duration-300 ${
+                  isActive
+                    ? "text-white"
+                    : "text-gray-400 hover:text-white"
                 }`
               }
             >
@@ -57,7 +63,8 @@ const Navbar = () => {
                   {isActive && (
                     <motion.span
                       layoutId="activeLink"
-                      className="absolute -bottom-2 left-0 h-[2px] w-full rounded-full bg-[#E63946]"
+                      className="absolute inset-0 rounded-full bg-white/10"
+                      transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
                     />
                   )}
                 </>
@@ -69,14 +76,15 @@ const Navbar = () => {
         <div className="hidden md:block">
           <Link
             to="/contact"
-            className="rounded-full bg-[#E63946] px-6 py-3 font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-[#c62d39] hover:shadow-[0_0_25px_rgba(230,57,70,0.4)]"
+            className="group relative overflow-hidden rounded-full bg-[#E63946] px-6 py-2.5 text-sm font-bold text-white transition-all duration-300 hover:shadow-[0_0_30px_rgba(230,57,70,0.4)]"
           >
-            Book Now
+            <span className="relative z-10">Book Now</span>
+            <span className="absolute inset-0 bg-linear-to-r from-[#c62d39] to-[#E63946] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           </Link>
         </div>
 
         <button onClick={() => setIsOpen(!isOpen)} className="text-white md:hidden">
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
+          {isOpen ? <X size={26} /> : <Menu size={26} />}
         </button>
       </div>
 
@@ -86,32 +94,46 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="overflow-hidden border-t border-[#E63946]/10 bg-[#0A0A0F]/98 backdrop-blur-xl md:hidden"
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="overflow-hidden border-t border-white/5 bg-[#0A0A0F]/95 backdrop-blur-2xl md:hidden"
           >
-            <div className="flex flex-col gap-4 px-6 py-6">
-              {navLinks.map((link) => (
-                <NavLink
+            <div className="flex flex-col gap-1 px-6 py-6">
+              {navLinks.map((link, i) => (
+                <motion.div
                   key={link.name}
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className={({ isActive }) =>
-                    `text-lg transition-colors duration-300 ${
-                      isActive ? "text-[#E63946]" : "text-gray-300 hover:text-[#A8DADC]"
-                    }`
-                  }
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.05 }}
                 >
-                  {link.name}
-                </NavLink>
+                  <NavLink
+                    to={link.path}
+                    onClick={() => setIsOpen(false)}
+                    className={({ isActive }) =>
+                      `block rounded-xl px-4 py-3 text-lg font-medium transition-all duration-300 ${
+                        isActive
+                          ? "bg-white/10 text-white"
+                          : "text-gray-400 hover:bg-white/5 hover:text-white"
+                      }`
+                    }
+                  >
+                    {link.name}
+                  </NavLink>
+                </motion.div>
               ))}
 
-              <Link
-                to="/contact"
-                onClick={() => setIsOpen(false)}
-                className="mt-4 rounded-full bg-[#E63946] py-3 text-center font-semibold text-white transition-all hover:bg-[#c62d39]"
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
               >
-                Book Now
-              </Link>
+                <Link
+                  to="/contact"
+                  onClick={() => setIsOpen(false)}
+                  className="mt-4 block rounded-full bg-[#E63946] py-3.5 text-center font-bold text-white transition-all hover:bg-[#c62d39]"
+                >
+                  Book Now
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
         )}
