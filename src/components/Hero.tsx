@@ -262,7 +262,7 @@ const Hero = () => {
 
           {/* Hero Image */}
           <motion.img
-            src="/images/hero-vr.png"
+            src="/vrHome.jpg"
             alt="VR Player at DESNI VR - Runda Mall Nairobi"
             animate={{ y: [0, -12, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
