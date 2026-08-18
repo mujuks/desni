@@ -32,7 +32,7 @@ const Experience = () => {
           className="mx-auto mb-12 max-w-3xl text-center sm:mb-16"
         >
           <span className="rounded-full border border-[#E63946]/30 bg-[#E63946]/10 px-4 py-1.5 text-xs font-medium text-[#E63946] sm:px-5 sm:py-2 sm:text-sm">
-            Why Choose DESNI VR?
+            Why Choose DISNE VR?
           </span>
 
           <h2 className="mt-5 text-3xl font-black sm:mt-6 sm:text-4xl md:text-5xl">
@@ -42,7 +42,7 @@ const Experience = () => {
 
           <p className="mt-4 text-base leading-relaxed text-gray-400 sm:mt-6 sm:text-lg">
             Whether you're visiting with friends, family or colleagues,
-            DESNI VR delivers unforgettable virtual reality adventures for
+            DISNE VR delivers unforgettable virtual reality adventures for
             players of every age and skill level.
           </p>
         </motion.div>
@@ -100,7 +100,7 @@ const Experience = () => {
         >
           <h3 className="text-2xl font-bold sm:text-3xl">Ready to Enter Another World?</h3>
           <p className="mx-auto mt-3 max-w-2xl text-sm text-gray-400 sm:mt-4 sm:text-base">
-            Book your session today and discover why DESNI VR is becoming one
+            Book your session today and discover why DISNE VR is becoming one
             of Nairobi's favourite destinations for immersive entertainment.
           </p>
           <a

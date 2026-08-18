@@ -47,7 +47,7 @@ const Gallery = () => {
           <h1 className="text-4xl font-black sm:text-5xl md:text-7xl">
             Experience
             <span className="block bg-linear-to-r from-[#E63946] to-[#A8DADC] bg-clip-text text-transparent">
-              DESNI VR
+              DISNE VR
             </span>
           </h1>
 

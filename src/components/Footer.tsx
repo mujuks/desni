@@ -23,7 +23,7 @@ const Footer = () => {
             <Link to="/" className="flex items-center gap-2 text-2xl font-black tracking-wide sm:text-3xl">
               <Gamepad2 size={26} className="text-[#E63946] sm:hidden" />
               <Gamepad2 size={30} className="hidden text-[#E63946] sm:block" />
-              <span className="text-[#E63946]">DESNI</span>
+              <span className="text-[#E63946]">DISNE</span>
               <span className="text-[#A8DADC]">VR</span>
             </Link>
 
@@ -79,7 +79,7 @@ const Footer = () => {
               </p>
               <p className="flex gap-2.5 sm:gap-3">
                 <Mail className="text-[#E63946]" size={16} />
-                info@desnivr.com
+                info@disnevr.com
               </p>
             </div>
           </div>
@@ -107,7 +107,7 @@ const Footer = () => {
 
         {/* Bottom */}
         <div className="flex flex-col items-center justify-between gap-4 text-center text-xs text-gray-500 sm:text-sm md:flex-row">
-          <p>&copy; {new Date().getFullYear()} DESNI VR. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} DISNE VR. All rights reserved.</p>
           <p>Runda Mall, Nairobi, Kenya | Built with passion for immersive gaming.</p>
         </div>
       </div>

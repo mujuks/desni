@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 const features = [
   { icon: Headset, title: "Immersive Technology", description: "Experience high-quality VR gaming with advanced equipment designed to transport you into another world." },
   { icon: Gamepad2, title: "Exciting Games", description: "From action and adventure to family experiences, we offer games suitable for every type of player." },
-  { icon: Users, title: "Fun For Everyone", description: "Whether you come alone, with friends, family or colleagues, DESNI VR creates unforgettable moments." },
+  { icon: Users, title: "Fun For Everyone", description: "Whether you come alone, with friends, family or colleagues, DISNE VR creates unforgettable moments." },
   { icon: Trophy, title: "Competitive Experiences", description: "Challenge your friends through tournaments, multiplayer games and exciting VR competitions." },
 ];
 
@@ -39,7 +39,7 @@ const About = () => {
           <h1 className="text-4xl font-black sm:text-5xl md:text-7xl">
             About
             <span className="block bg-linear-to-r from-[#E63946] to-[#A8DADC] bg-clip-text text-transparent">
-              DESNI VR
+              DISNE VR
             </span>
           </h1>
 
@@ -60,7 +60,7 @@ const About = () => {
           >
             <img
               src="/images/about-vr.jpg"
-              alt="DESNI VR Experience"
+              alt="DISNE VR Experience"
               className="rounded-2xl border border-white/10 shadow-[0_0_40px_rgba(230,57,70,0.15)] sm:rounded-3xl"
             />
           </motion.div>
@@ -78,7 +78,7 @@ const About = () => {
             </h2>
 
             <p className="mt-4 text-sm leading-relaxed text-gray-400 sm:mt-6 sm:text-base">
-              DESNI VR is a virtual reality gaming destination located in
+              DISNE VR is a virtual reality gaming destination located in
               Runda Mall, Nairobi, created to give players access to immersive
               worlds, exciting challenges and unforgettable entertainment experiences.
               <br /><br />
@@ -116,7 +116,7 @@ const About = () => {
 
       {/* Features */}
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20">
-        <h2 className="mb-8 text-center text-3xl font-black sm:mb-12 sm:text-4xl">Why Choose DESNI VR?</h2>
+        <h2 className="mb-8 text-center text-3xl font-black sm:mb-12 sm:text-4xl">Why Choose DISNE VR?</h2>
 
         <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
           {features.map((feature) => (

@@ -43,7 +43,7 @@ const CTA = () => {
             </h2>
 
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-gray-300 sm:mt-6 sm:text-lg">
-              Experience the next generation of entertainment at DESNI VR.
+              Experience the next generation of entertainment at DISNE VR.
               Bring your friends, challenge yourself, and create unforgettable
               memories inside virtual reality.
             </p>

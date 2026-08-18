@@ -59,7 +59,7 @@ const Gallery = () => {
 
           <p className="mt-4 text-base text-gray-400 sm:mt-6 sm:text-lg">
             Take a look at some unforgettable moments from players enjoying
-            immersive virtual reality adventures at DESNI VR.
+            immersive virtual reality adventures at DISNE VR.
           </p>
         </motion.div>
 
@@ -137,7 +137,7 @@ const Gallery = () => {
             href="/contact"
             className="mt-6 inline-block rounded-full bg-[#E63946] px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-[#c62d39] hover:shadow-[0_0_30px_rgba(230,57,70,0.4)] sm:mt-8 sm:px-8 sm:py-4 sm:text-base"
           >
-            Visit DESNI VR
+            Visit DISNE VR
           </a>
         </motion.div>
       </div>

@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 const contactDetails = [
   { icon: MapPin, title: "Location", info: "Runda Mall, Nairobi, Kenya" },
   { icon: Phone, title: "Phone", info: "+254 700 000 000" },
-  { icon: Mail, title: "Email", info: "info@desnivr.com" },
+  { icon: Mail, title: "Email", info: "info@disnevr.com" },
   { icon: Clock, title: "Opening Hours", info: "10:00 AM - 10:00 PM Daily" },
 ];
 
@@ -49,7 +49,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-black sm:text-4xl">Contact DESNI VR</h2>
+            <h2 className="text-3xl font-black sm:text-4xl">Contact DISNE VR</h2>
 
             <p className="mt-4 text-sm leading-relaxed text-gray-400 sm:mt-5">
               Reach out to us for bookings, private events, birthday parties,

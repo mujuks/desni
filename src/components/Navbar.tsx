@@ -49,7 +49,7 @@ const Navbar = () => {
             <Gamepad2 size={18} className="hidden text-white sm:block" />
           </div>
           <span className="text-lg font-black tracking-tight sm:text-xl">
-            <span className="text-white">DESNI</span>
+            <span className="text-white">DISNE</span>
             <span className="text-[#E63946]">VR</span>
           </span>
         </Link>

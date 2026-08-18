@@ -169,7 +169,7 @@ const Hero = () => {
           {/* Hero Image */}
           <motion.img
             src="/vrHome.jpg"
-            alt="VR Player at DESNI VR - Runda Mall Nairobi"
+            alt="VR Player at DISNE VR - Runda Mall Nairobi"
             animate={{ y: [0, -12, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
             className="relative z-10 w-full max-w-[220px] drop-shadow-[0_0_40px_rgba(230,57,70,0.15)] sm:max-w-sm md:max-w-md lg:max-w-md"
